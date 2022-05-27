@@ -4,6 +4,9 @@ import cors from 'cors'
 import endpoints from './endpoints.js'
 
 
+// dupla: Gustavo Montainher e Ingrid Assis
+// anjo: Bianca Liebetanz
+
 const server=express();
 server.use (cors());
 server.use(express.json());

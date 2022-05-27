@@ -6,7 +6,7 @@ export function semaforo(cor){
     return 'aguarde'; 
 
     else
-    return 'invalido'; 
+    return 'cor invalida'; 
 } 
 
 export function diaSemana(dia){
@@ -35,13 +35,11 @@ export function diaSemana(dia){
     return'dia invalido'
 }
 
-export function fatorial(numero){
-
-    let i= numero;
-    for(let cont=1; cont<=numero; cont++){
-        i= i * (numero - cont);
-        i++;
+export function Fatorial(numero){
+    let r=1;
+    for(let i=1; i<=numero; i++){
+        r= r*i;
     }
-    return i;
+    return r;
 }
 

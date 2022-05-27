@@ -1,12 +1,12 @@
-import { Router } from "express";
-import {semaforo, diaSemana} from "./service.js";
+import { Router } from "express"
+import {semaforo, diaSemana, Fatorial} from "./service.js"
 
 const server = Router();
 
 server.get('/semaforo/:cor',(req,resp)=>{
     try{ 
         let resposta= semaforo(req.params.cor);
-        resp.send(resposta);
+        resp.send({resposta});
     }
     catch (err){
         resp.status(404).send({error:err.message})
@@ -27,7 +27,20 @@ catch(err){
 }
 })
 
+server.get('/fatorial', (req, resp)=>{
+    try{
+        let n = Number(req.query.n);
+        let r= Fatorial(n);
+
+        resp.send({
+            fatorial:r
+        })
+    }
+    catch(err){
+        resp.status(404).send({error:err.message})
+    }
+})
+
 
 
 export default server;
-

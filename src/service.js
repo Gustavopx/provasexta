@@ -43,3 +43,15 @@ export function Fatorial(numero){
     return r;
 }
 
+export function sequenciaPar(numero){
+    let n= [];
+    let p=0;
+
+    for (let i=0; p<numero; i++)
+        if (i % 2 == 0)
+        {
+            n[p]= i;
+            p++;
+        }
+    return n;
+}

@@ -1,5 +1,5 @@
 import { Router } from "express"
-import {semaforo, diaSemana, Fatorial} from "./service.js"
+import {semaforo, diaSemana, Fatorial, sequenciaPar} from "./service.js"
 
 const server = Router();
 
@@ -41,6 +41,13 @@ server.get('/fatorial', (req, resp)=>{
     }
 })
 
+server.post('/sequenciapar', (req, resp) => {
+    const {a:a} = req.body;
 
+    let r = sequenciaPar(a);
+    resp.send({
+    limite:r
+    })
+})
 
 export default server;
